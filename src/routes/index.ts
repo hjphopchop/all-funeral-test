@@ -11,7 +11,7 @@ export interface Route {
 export enum RouteNames {
   AUTH = "/auth",
   HOME = "/",
-  MARKET = "/market",
+  MARKET = "/market/*",
 }
 
 export const publicRoutes: Route[] = [
