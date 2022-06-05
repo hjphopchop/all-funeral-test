@@ -1,16 +1,24 @@
 import React from 'react';
 import './App.scss';
+import AppRouter from './components/AppRouter';
 import Menu from './components/menu/Menu';
 
+
 function App() {
+  const isAuth = true
   return (
+    
     <div className='main'>
-    
-     <Menu/>
-    
-   <div className='content'><p>Я Игорь Парфёнов Александрович</p> </div>
-    
+      {isAuth &&
+      <Menu/>
+}
+    <div className='content'>
+    <AppRouter/>
     </div>
+    </div>
+    
+   
+   
   );
 }
 

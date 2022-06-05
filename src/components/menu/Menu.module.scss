@@ -1,7 +1,7 @@
 .menu {
   background-color: rgba(130, 178, 132, 1);
-  height: 90vh;
-  width: 5vw;
+  height: 85vh;
+  width: 50px;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -13,18 +13,21 @@
   flex-direction: column;
   align-items: center;
  
-  .menuWrapp {
+  
     
  
       
-      
-      
-     
 
     .menuList {
-        
-      background-color: red;
+      width: 100%;
+      padding: 1vh 0;
+      text-align: center;
+
+      li{
+        padding: 2vh 0;
+      }
       
     }
-  }
+
+  
 }
