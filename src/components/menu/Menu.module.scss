@@ -7,27 +7,18 @@
   bottom: 0;
   overflow: auto;
 
-  
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
- 
-  
-    
- 
-      
 
-    .menuList {
-      width: 100%;
-      padding: 1vh 0;
-      text-align: center;
+  .menuList {
+    width: 100%;
+    padding: 1vh 0;
+    text-align: center;
 
-      li{
-        padding: 2vh 0;
-      }
-      
+    li {
+      padding: 2vh 0;
     }
-
-  
+  }
 }

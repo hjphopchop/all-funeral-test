@@ -14,15 +14,13 @@ const Menu = () => {
       <ul className={cl.menuList}>
         <li>
           <Link to={"/"}>
-          <img src={home}></img>
+            <img src={home}></img>
           </Link>
-         
         </li>
         <li>
-          <Link to={'/market'}>
-          <img src={market}></img>
+          <Link to={"/market"}>
+            <img src={market}></img>
           </Link>
-          
         </li>
         <li>
           <img src={search}></img>
