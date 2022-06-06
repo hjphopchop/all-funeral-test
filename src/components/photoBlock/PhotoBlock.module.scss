@@ -1,0 +1,52 @@
+.photoBlock {
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+  .photoTitle {
+  }
+  .photoItems {
+    display: flex;
+
+    .photo {
+      position: relative;
+      width: 160px;
+      height: auto;
+      &:not(:last-child) {
+        margin-right: 2vw;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .photoBtn {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        z-index: 1000;
+        background-color: rgba(217, 81, 81, 1);
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: none;
+      }
+    }
+  }
+  .button {
+    position: relative;
+    border: none;
+    color: rgba(130, 178, 132, 1);
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(229, 229, 229, 1);
+
+    img {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+    span {
+      display: block;
+      text-align: center;
+      padding: 1vh 5vw;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import CompanyInfo from "../../components/companyInfo/CompanyInfo";
 import HeaderPage from "../../components/headerPage/HeaderPage";
+import PhotoBlock from "../../components/photoBlock/PhotoBlock";
 import cl from "./Company.module.scss";
 
 
@@ -9,12 +10,9 @@ const Company = () => {
     <div className={cl.company}>
       <HeaderPage />
       <main className={cl.main}>
-        <CompanyInfo/>
+        <CompanyInfo />
+        <PhotoBlock/>
       </main>
-
-      <div>44554</div>
-      <div>44554</div>
-      <div>44554</div>
     </div>
   );
 };
