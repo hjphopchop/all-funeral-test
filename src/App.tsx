@@ -2,9 +2,10 @@ import React from "react";
 import "./App.scss";
 import AppRouter from "./components/AppRouter";
 import Menu from "./components/menu/Menu";
+import { useTypedSelector } from "./hooks/store";
 
 function App() {
-  const isAuth = true;
+  const isAuth = useTypedSelector((state) => state.auth.isAuth);
   return (
     <>
     

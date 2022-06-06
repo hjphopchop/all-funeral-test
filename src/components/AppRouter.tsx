@@ -1,9 +1,10 @@
 import React, { Children } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
+import { useTypedSelector } from "../hooks/store";
 import { privateRoutes, publicRoutes } from "../routes";
 
 const AppRouter = () => {
-  const isAuth = true;
+  const isAuth = useTypedSelector((state) => state.auth.isAuth);
   return (
     <Routes>
       {!isAuth &&
