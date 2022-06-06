@@ -1,0 +1,21 @@
+.header{
+    
+    padding:2% 3%;
+   border-bottom: 1px solid rgba(229, 229, 229, 1);
+    display: flex;
+    justify-content: space-between;
+    .prev{
+        color: rgba(130, 178, 132, 1);
+        
+        
+    }
+    .headerIcons{
+        display: flex;
+        
+        align-items: center;
+    }
+    img:not(:last-child){
+        padding-right: 15px;
+    }
+
+}

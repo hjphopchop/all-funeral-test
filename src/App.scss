@@ -1,7 +1,13 @@
 .main {
   position: relative;
   display: flex;
+  width: 100vw;
+  
 }
 .content {
-  margin-left: 50px;
+  padding-left: 50px;
+  
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
 }

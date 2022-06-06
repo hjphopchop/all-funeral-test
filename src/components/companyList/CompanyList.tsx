@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Children } from "react";
 import Company from "../companyItem/CompanyItem";
 
 const Companies = () => {
@@ -16,11 +16,11 @@ const Companies = () => {
   return (
     <div>
       {companies &&
-        companies.map((item) => (
-          <>
-            <Company key={item.id} {...item} />
-          </>
-        ))}
+       Children.toArray(companies?.map((item) => (
+         
+        <Company key={item.id} {...item} />
+      
+    ))) }
     </div>
   );
 };
