@@ -4,7 +4,7 @@ import Company from "../companyItem/CompanyItem";
 const Companies = () => {
   const companies = [
     {
-      id: 1,
+      id: 12,
     },
     {
       id: 2,
@@ -16,11 +16,9 @@ const Companies = () => {
   return (
     <div>
       {companies &&
-       Children.toArray(companies?.map((item) => (
-         
-        <Company key={item.id} {...item} />
-      
-    ))) }
+        Children.toArray(
+          companies?.map((item) => <Company key={item.id} {...item} />)
+        )}
     </div>
   );
 };

@@ -3,7 +3,9 @@ import cl from "./Auth.module.scss";
 import logo from "../../assets/img/logo.png";
 import AuthForm from "../../components/authForm/AuthForm";
 
+
 const Auth = () => {
+
   return (
     <div className={cl.auth}>
       <div className={cl.authItems}>
