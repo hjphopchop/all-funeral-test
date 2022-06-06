@@ -1,9 +1,21 @@
-import React from 'react'
+import React from "react";
+import cl from "./Auth.module.scss";
+import logo from "../../assets/img/logo.png";
+import AuthForm from "../../components/authForm/AuthForm";
 
 const Auth = () => {
   return (
-    <div>Auth</div>
-  )
-}
+    <div className={cl.auth}>
+      <div className={cl.authItems}>
+        <img src={logo}></img>
+        <div className={cl.formBlock}>
+          <h1 className={cl.authTitle}>Cemetery Workstation</h1>
+          <p>Please sign in</p>
+          <AuthForm />
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Auth
+export default Auth;

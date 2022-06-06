@@ -1,0 +1,28 @@
+.auth {
+  background-color: rgba(130, 178, 132, 1);
+  width: 100%;
+  height: 85vh;
+  position: relative;
+
+  .authItems {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+
+    .authTitle {
+      padding-bottom: 1vh;
+    }
+
+    .formBlock {
+      background-color: white;
+
+      border-radius: 10px;
+      padding: 3vh 2vw;
+      margin-left: 3vw;
+    }
+  }
+}
