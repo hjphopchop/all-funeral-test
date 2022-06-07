@@ -19,6 +19,12 @@
 
     li {
       padding: 2vh 0;
+
+      button{
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
     }
   }
 }
