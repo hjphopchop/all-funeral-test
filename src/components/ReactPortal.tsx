@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 function createWrapperAndAppendToBody(wrapperId: string) {
@@ -9,16 +9,16 @@ function createWrapperAndAppendToBody(wrapperId: string) {
 }
 interface ReactPortalProps {
   children: React.ReactNode,
-  wrapperId: string 
+  wrapperId: string,
 }
 function ReactPortal({
   children,
   wrapperId = "react-portal-wrapper",
 }: ReactPortalProps) {
-  const [wrapperElement, setWrapperElement] = useState(null);
+  const [wrapperElement, setWrapperElement] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
-    let element:any = document.getElementById(wrapperId) ;
+    let element = document.getElementById(wrapperId) ;
     let systemCreated = false;
     if (!element) {
       systemCreated = true;

@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import cl from "./CompanyInfo.module.scss";
 import pencil from "../../assets/img/page/Pencil.png";
 import { companiesApi } from "../../services/companies";
 import { useParams } from "react-router-dom";
 import { contactsApi } from "../../services/contacts";
+import Modal from "../modal/Modal";
+import CompanyForm from "../companyForm/CompanyForm";
 
 const CompanyInfo = () => {
   const param = useParams();
@@ -14,7 +16,21 @@ const CompanyInfo = () => {
     error,
   } = companiesApi.useGetCompanyQuery(param.id);
   const { data: contacts } = contactsApi.useGetContactsQuery("");
+  console.log(company);
   console.log(contacts);
+
+  const [isOpen, setIsopen] = useState(false)
+
+
+  const handleOpen = () => {
+   setIsopen(true)
+
+  }
+
+  const handleClose = () => {
+    setIsopen(false)
+ 
+   }
 
   if (error) {
     return <h1>Возможно когда-то и было, но сейчас нет</h1>;
@@ -28,12 +44,12 @@ const CompanyInfo = () => {
       <div className={cl.companyInfo}>
         <div className={cl.companyInfoTitle}>
           <h3>{company.shortName} </h3>
-          <img src={pencil} />
+        <button onClick={handleOpen}><img src={pencil} /></button>  
         </div>
         <div>
           <div className={cl.companyInfoTitle}>
             <p>Общая информация </p>
-            <img src={pencil} />
+            <button onClick={handleOpen}><img src={pencil} /></button>
           </div>
           <div className={cl.infoContent}>
             <div className={cl.infoContentLeft}>
@@ -76,6 +92,10 @@ const CompanyInfo = () => {
             )}
           </div>
         </div>
+
+        <Modal handleClose={handleClose} isOpen={isOpen}>
+          <CompanyForm company={company} />
+        </Modal>
       </div>
     )
   );

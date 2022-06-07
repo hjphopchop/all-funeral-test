@@ -15,5 +15,15 @@ export const companiesApi = createApi({
         },
       }),
     }),
+    updateCompany: build.mutation<any, any>({
+      query: (company) => ({
+        url: `/companies/12`,
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibWF4IiwiaWF0IjoxNjU0MzgxMTI2LCJleHAiOjE2NTQ5ODU5MjZ9.jVqiX-AFwk2tSenmKVGwZd0xbKWXckWf49WGdsni_1Y`,
+        },
+        body: { ...company },
+      }),
+    }),
   }),
 });

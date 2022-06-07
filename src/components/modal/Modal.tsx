@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef } from "react";
 import {CSSTransition} from "react-transition-group"
 import ReactPortal from "../ReactPortal";
-import cl from "./Modal.module.css";
+import cl from "./Modal.module.scss";
 
 export interface ModalProps {
   children: React.ReactNode;
