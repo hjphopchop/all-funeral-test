@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { companiesApi } from "../../services/companies";
+import { companiesApi } from "../../../services/companies";
 import cl from "./CompanyForm.module.scss";
 
 const CompanyForm = ({ company }: any) => {
@@ -10,19 +10,14 @@ const CompanyForm = ({ company }: any) => {
     defaultValues: {
       shortName: company.shortName,
       name: company.name,
-     
-        
-    
-     
+
       businessEntity: company.businessEntity,
       type: [company.type[0], company.type[1]],
-     
     },
   });
 
   const onSubmit = (company: any) => {
-      company.type = company.type.replace(/\s/g, '').split(',')
-
+    company.type = company.type.replace(/\s/g, "").split(",");
 
     updateCompany(company);
 

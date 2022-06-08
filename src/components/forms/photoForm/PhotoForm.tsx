@@ -1,8 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useAppDispatch } from "../../hooks/store";
-import { companiesApi } from "../../services/companies";
-import { addImage } from "../../store/slices/imagesSlice";
+import { useAppDispatch } from "../../../hooks/store";
+import { companiesApi } from "../../../services/companies";
+import { addImage } from "../../../store/slices/imagesSlice";
 
 const PhotoForm = () => {
   const { register, handleSubmit } = useForm();
@@ -15,8 +15,8 @@ const PhotoForm = () => {
     const formData = new FormData();
     formData.append("file", data.file[0]);
 
-    const res = await addPhoto(formData);
-    dispatch(addImage(res.data.thumbpath))
+    const res:any = await addPhoto(formData);
+    dispatch(addImage(res?.data?.thumbpath))
 
   };
 

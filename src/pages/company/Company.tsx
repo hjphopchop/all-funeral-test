@@ -1,5 +1,6 @@
 import React from "react";
-import CompanyInfo from "../../components/companyInfo/CompanyInfo";
+import CompanyInfo from "../../components/infoBlocks/CompanyInfo";
+import ContactsInfo from "../../components/infoBlocks/ContactsInfo";
 import HeaderPage from "../../components/headerPage/HeaderPage";
 import PhotoBlock from "../../components/photoBlock/PhotoBlock";
 import cl from "./Company.module.scss";
@@ -11,6 +12,7 @@ const Company = () => {
       <HeaderPage />
       <main className={cl.main}>
         <CompanyInfo />
+        <ContactsInfo/>
         <PhotoBlock/>
       </main>
     </div>

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import cl from "./CompanyInfo.module.scss";
+import cl from "./infoBlocks.module.scss";
 import pencil from "../../assets/img/page/Pencil.png";
 import { companiesApi } from "../../services/companies";
 import { useParams } from "react-router-dom";
-import { contactsApi } from "../../services/contacts";
 import Modal from "../modal/Modal";
-import CompanyForm from "../companyForm/CompanyForm";
+import CompanyForm from "../forms/companyForm/CompanyForm";
 
 const CompanyInfo = () => {
   const param = useParams();
@@ -14,20 +13,16 @@ const CompanyInfo = () => {
     isLoading,
     error,
   } = companiesApi.useGetCompanyQuery(param.id);
-  const { data: contacts } = contactsApi.useGetContactsQuery("");
 
-  const [isOpen, setIsopen] = useState(false)
-
+  const [isOpen, setIsopen] = useState(false);
 
   const handleOpen = () => {
-   setIsopen(true)
-
-  }
+    setIsopen(true);
+  };
 
   const handleClose = () => {
-    setIsopen(false)
- 
-   }
+    setIsopen(false);
+  };
 
   if (error) {
     return <h1>Возможно когда-то и было, но сейчас нет</h1>;
@@ -38,15 +33,19 @@ const CompanyInfo = () => {
 
   return (
     company && (
-      <div className={cl.companyInfo}>
+      <div className={cl.Info}>
         <div className={cl.companyInfoTitle}>
           <h3>{company.shortName} </h3>
-        <button onClick={handleOpen}><img src={pencil} /></button>  
+          <button onClick={handleOpen}>
+            <img src={pencil} />
+          </button>
         </div>
         <div>
           <div className={cl.companyInfoTitle}>
             <p>Общая информация </p>
-            <button onClick={handleOpen}><img src={pencil} /></button>
+            <button onClick={handleOpen}>
+              <img src={pencil} />
+            </button>
           </div>
           <div className={cl.infoContent}>
             <div className={cl.infoContentLeft}>
@@ -66,27 +65,6 @@ const CompanyInfo = () => {
                 {company.type[0]} {company.type[1]}
               </div>
             </div>
-          </div>
-
-          <div className={cl.companyInfoTitle}>
-            <p>Контактные данные </p>
-            <img src={pencil} />
-          </div>
-          <div className={cl.infoContent}>
-            <div className={cl.infoContentLeft}>
-              <div>ФИО:</div>
-              <div>Телефон:</div>
-              <div>Эл. почта:</div>
-            </div>
-            {contacts && (
-              <div>
-                <div>
-                  {contacts.lastname} {contacts.firstname} {contacts.patronymic}
-                </div>
-                <div>{contacts.phone}</div>
-                <div>{contacts.email}</div>
-              </div>
-            )}
           </div>
         </div>
 

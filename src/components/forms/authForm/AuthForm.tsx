@@ -1,8 +1,8 @@
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useAppDispatch } from "../../hooks/store";
-import { getToken } from "../../requests/request";
-import { login } from "../../store/slices/authSlice";
+import { useAppDispatch } from "../../../hooks/store";
+import { getToken } from "../../../requests/request";
+import { login } from "../../../store/slices/authSlice";
 
 import cl from "./AuthForm.module.scss";
 const AuthForm = () => {

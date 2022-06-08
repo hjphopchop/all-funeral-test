@@ -4,7 +4,7 @@ import stone from "../../assets/img/photo/Stone.png";
 import del from "../../assets/img/page/Delete.png";
 import add from "../../assets/img/page/Add.png"
 import Modal from '../modal/Modal';
-import PhotoForm from '../photoForm/PhotoForm';
+import PhotoForm from '../forms/photoForm/PhotoForm';
 import { useAppDispatch, useTypedSelector } from '../../hooks/store';
 import { deleteImage } from '../../store/slices/imagesSlice';
 import { Image, Images } from '../../types/images';
