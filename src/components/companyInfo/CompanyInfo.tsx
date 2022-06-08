@@ -9,15 +9,12 @@ import CompanyForm from "../companyForm/CompanyForm";
 
 const CompanyInfo = () => {
   const param = useParams();
-  console.log(param);
   const {
     data: company,
     isLoading,
     error,
   } = companiesApi.useGetCompanyQuery(param.id);
   const { data: contacts } = contactsApi.useGetContactsQuery("");
-  console.log(company);
-  console.log(contacts);
 
   const [isOpen, setIsopen] = useState(false)
 
