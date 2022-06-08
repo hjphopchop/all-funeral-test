@@ -10,14 +10,12 @@ import { Link } from "react-router-dom";
 import { useAppDispatch } from "../../hooks/store";
 import { logout } from "../../store/slices/authSlice";
 
-
-
 const Menu = () => {
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
-const handleLogout = () => {
-  dispatch(logout());
-}
+  const handleLogout = () => {
+    dispatch(logout());
+  };
   return (
     <div className={cl.menu}>
       <ul className={cl.menuList}>
@@ -43,7 +41,9 @@ const handleLogout = () => {
           <img src={chat}></img>
         </li>
         <li>
-         <button onClick={handleLogout}><img src={exit}></img></button> 
+          <button onClick={handleLogout}>
+            <img src={exit}></img>
+          </button>
         </li>
       </ul>
     </div>

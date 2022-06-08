@@ -5,15 +5,14 @@ import HeaderPage from "../../components/headerPage/HeaderPage";
 import PhotoBlock from "../../components/photoBlock/PhotoBlock";
 import cl from "./Company.module.scss";
 
-
 const Company = () => {
   return (
     <div className={cl.company}>
       <HeaderPage />
       <main className={cl.main}>
         <CompanyInfo />
-        <ContactsInfo/>
-        <PhotoBlock/>
+        <ContactsInfo />
+        <PhotoBlock />
       </main>
     </div>
   );

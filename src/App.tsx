@@ -8,15 +8,15 @@ function App() {
   const isAuth = useTypedSelector((state) => state.auth.isAuth);
   return (
     <>
-    
       {isAuth && <Menu />}
       <div className="content">
         <AppRouter />
       </div>
-    
-    <footer>
-    © 1992 - 2020 Честный Агент © Все права защищены. 8 (495) 150-21-12
-    </footer>
+
+      <footer className="footer">
+        <div>© 1992 - 2020 Честный Агент © Все права защищены.</div>
+        <div>8 (495) 150-21-12</div>
+      </footer>
     </>
   );
 }

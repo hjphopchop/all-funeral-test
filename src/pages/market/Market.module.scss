@@ -1,22 +1,20 @@
+.submenuItems {
+  padding-top: 2vh;
 
-  .submenuItems {
-    padding-top: 2vh;
+  .submenuItem {
+    background-color: rgba(238, 238, 238, 1);
+    padding: 2vh 2vw;
+    margin-bottom: 2vh;
 
-    .submenuItem {
-      background-color: rgba(238, 238, 238, 1);
-      padding: 2vh 2vw;
-      margin-bottom: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-
-      img {
-        padding-right: 12px;
-      }
-      .submenuItemText {
-        color: rgba(130, 178, 132, 1);
-      }
+    img {
+      padding-right: 12px;
+    }
+    .submenuItemText {
+      color: rgba(130, 178, 132, 1);
     }
   }
-
+}

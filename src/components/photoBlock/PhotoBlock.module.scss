@@ -1,6 +1,8 @@
 .photoBlock {
   border-bottom: 1px solid rgba(229, 229, 229, 1);
+  padding: 2vh 0;
   .photoTitle {
+    padding-bottom: 10px;
   }
   .photoItems {
     display: flex;
@@ -20,7 +22,7 @@
         position: absolute;
         top: 5%;
         right: 5%;
-        z-index: 1000;
+        z-index: 10;
         background-color: rgba(217, 81, 81, 1);
         width: 20px;
         height: 20px;
@@ -30,14 +32,13 @@
     }
   }
   .button {
+    margin-top: 1vh;
     position: relative;
     border: none;
     color: rgba(130, 178, 132, 1);
     background-color: rgba(255, 255, 255, 1);
     border: 1px solid rgba(229, 229, 229, 1);
     text-align: center;
-
-   
 
     img {
       position: absolute;

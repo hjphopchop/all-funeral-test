@@ -1,12 +1,16 @@
-import React from "react";
+import React, { FC } from "react";
 import { useForm } from "react-hook-form";
 import { companiesApi } from "../../../services/companies";
-import cl from "./CompanyForm.module.scss";
+import { Company } from "../../../types/company";
+import cl from "./OtherForms.module.scss";
 
-const CompanyForm = ({ company }: any) => {
+interface CompanyProps{
+  company:Company
+}
+const CompanyForm:FC<CompanyProps> = ({ company }) => {
   const [updateCompany] = companiesApi.useUpdateCompanyMutation();
 
-  const { register, handleSubmit } = useForm<any>({
+  const { register, handleSubmit } = useForm({
     defaultValues: {
       shortName: company.shortName,
       name: company.name,
@@ -16,7 +20,7 @@ const CompanyForm = ({ company }: any) => {
     },
   });
 
-  const onSubmit = (company: any) => {
+  const onSubmit = (company:any) => {
     company.type = company.type.replace(/\s/g, "").split(",");
 
     updateCompany(company);

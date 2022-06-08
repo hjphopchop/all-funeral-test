@@ -1,7 +1,8 @@
 export interface Image {
-  "url": string,  
+  url: string;
+  id: string;
 }
 
 export interface Images {
-allImages: Image[],
+  allImages: Image[];
 }

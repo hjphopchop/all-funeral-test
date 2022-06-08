@@ -1,5 +1,6 @@
 import React, { Children } from "react";
 import Company from "../companyItem/CompanyItem";
+import cl from "./CompanyList.module.scss";
 
 const Companies = () => {
   const companies = [
@@ -14,7 +15,7 @@ const Companies = () => {
     },
   ];
   return (
-    <div>
+    <div className={cl.companies}>
       {companies &&
         Children.toArray(
           companies?.map((item) => <Company key={item.id} {...item} />)

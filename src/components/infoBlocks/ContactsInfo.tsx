@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import cl from "./infoBlocks.module.scss";
 import pencil from "../../assets/img/page/Pencil.png";
-import { contactsApi } from '../../services/contacts';
-import ContactsForm from '../forms/contactsForm/ContactsForm';
-import Modal from '../modal/Modal';
-import cl from "./infoBlocks.module.scss"
+import { contactsApi } from "../../services/contacts";
+import ContactsForm from "../forms/otherForms/ContactsForm";
+import Modal from "../modal/Modal";
+
 const ContactsInfo = () => {
-    const { data: contacts } = contactsApi.useGetContactsQuery("");
+  const { data: contacts, error, isLoading } = contactsApi.useGetContactsQuery("");
 
   const [isOpen, setIsopen] = useState(false);
 
@@ -16,38 +17,43 @@ const ContactsInfo = () => {
   const handleClose = () => {
     setIsopen(false);
   };
+
+  if (error) {
+    return <h1>не найдено</h1>;
+  }
+  if (isLoading) {
+    return <h1>Загрузка</h1>;
+  }
   return (
     <div className={cl.info}>
-       <div className={cl.companyInfoTitle}>
-            <p>Контактные данные </p>
-            <button onClick={handleOpen}>
-            <img src={pencil} />
-          </button>
-          </div>
-          <div className={cl.infoContent}>
-            <div className={cl.infoContentLeft}>
-              <div>ФИО:</div>
-              <div>Телефон:</div>
-              <div>Эл. почта:</div>
+      <div className={cl.InfoTitle}>
+        <p>Контактные данные </p>
+        <button onClick={handleOpen}>
+          <img src={pencil} />
+        </button>
+      </div>
+      <div className={cl.infoContent}>
+        <div className={cl.infoContentLeft}>
+          <div className={cl.ifoContentItem}>ФИО:</div>
+          <div className={cl.ifoContentItem}>Телефон:</div>
+          <div className={cl.ifoContentItem}>Эл. почта:</div>
+        </div>
+        {contacts && (
+          <div>
+            <div className={cl.ifoContentItem}>
+              {contacts.lastname} {contacts.firstname} {contacts.patronymic}
             </div>
-            {contacts && (
-              <div>
-                <div>
-                  {contacts.lastname} {contacts.firstname} {contacts.patronymic}
-                </div>
-                <div>{contacts.phone}</div>
-                <div>{contacts.email}</div>
-              </div>
-            )}
+            <div className={cl.ifoContentItem}>{contacts.phone}</div>
+            <div className={cl.ifoContentItem}>{contacts.email}</div>
           </div>
+        )}
+      </div>
 
-          <Modal handleClose={handleClose} isOpen={isOpen}>
-          <ContactsForm contacts={contacts}/>
-        </Modal>
-  
+      <Modal handleClose={handleClose} isOpen={isOpen}>
+        <ContactsForm contacts={contacts} />
+      </Modal>
     </div>
-    
-  )
-}
+  );
+};
 
-export default ContactsInfo
+export default ContactsInfo;

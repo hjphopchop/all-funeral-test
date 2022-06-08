@@ -1,13 +1,14 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { Company } from "../types/company";
 
 export const companiesApi = createApi({
   reducerPath: "companiesApi",
   baseQuery: fetchBaseQuery({
     baseUrl: "http://135.181.35.61:2112",
   }),
-  tagTypes:["Companies"],
+  tagTypes: ["Companies"],
   endpoints: (build) => ({
-    getCompany: build.query<any, any>({
+    getCompany: build.query<Company, unknown>({
       query: (id) => ({
         url: `/companies/${id}`,
         method: "GET",
@@ -17,7 +18,7 @@ export const companiesApi = createApi({
       }),
       providesTags: (result) => ["Companies"],
     }),
-    updateCompany: build.mutation<any, any>({
+    updateCompany: build.mutation<Company, any>({
       query: (company) => ({
         url: `/companies/12`,
         method: "PATCH",
@@ -28,7 +29,7 @@ export const companiesApi = createApi({
       }),
       invalidatesTags: ["Companies"],
     }),
-    deleteCompany: build.mutation<any, any>({
+    deleteCompany: build.mutation<Company, string>({
       query: () => ({
         url: `/companies/12`,
         method: "DELETE",
@@ -44,8 +45,6 @@ export const companiesApi = createApi({
         method: "POST",
         headers: {
           Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibWF4IiwiaWF0IjoxNjU0MzgxMTI2LCJleHAiOjE2NTQ5ODU5MjZ9.jVqiX-AFwk2tSenmKVGwZd0xbKWXckWf49WGdsni_1Y`,
-         
-          
         },
         body: img,
       }),

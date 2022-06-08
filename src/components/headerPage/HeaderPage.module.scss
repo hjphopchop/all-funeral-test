@@ -1,21 +1,21 @@
-.header{
-    
-    padding:3vh 3vw;
-   border-bottom: 1px solid rgba(229, 229, 229, 1);
+.header {
+  padding: 3vh 3vw;
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+  display: flex;
+  justify-content: space-between;
+  .prev {
+    color: rgba(130, 178, 132, 1);
+  }
+  button {
+    background-color: white;
+    border: none;
+  }
+  .headerIcons {
     display: flex;
-    justify-content: space-between;
-    .prev{
-        color: rgba(130, 178, 132, 1);
-        
-        
-    }
-    .headerIcons{
-        display: flex;
-        
-        align-items: center;
-    }
-    img:not(:last-child){
-        padding-right: 15px;
-    }
 
+    align-items: center;
+  }
+  img:not(:last-child) {
+    padding-right: 15px;
+  }
 }

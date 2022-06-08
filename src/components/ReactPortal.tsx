@@ -8,17 +8,19 @@ function createWrapperAndAppendToBody(wrapperId: string) {
   return wrapperElement;
 }
 interface ReactPortalProps {
-  children: React.ReactNode,
-  wrapperId: string,
+  children: React.ReactNode;
+  wrapperId: string;
 }
 function ReactPortal({
   children,
   wrapperId = "react-portal-wrapper",
 }: ReactPortalProps) {
-  const [wrapperElement, setWrapperElement] = useState<HTMLElement | null>(null);
+  const [wrapperElement, setWrapperElement] = useState<HTMLElement | null>(
+    null
+  );
 
   useEffect(() => {
-    let element = document.getElementById(wrapperId) ;
+    let element = document.getElementById(wrapperId);
     let systemCreated = false;
     if (!element) {
       systemCreated = true;

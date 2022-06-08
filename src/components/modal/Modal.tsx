@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef } from "react";
-import {CSSTransition} from "react-transition-group"
+import { CSSTransition } from "react-transition-group";
 import ReactPortal from "../ReactPortal";
 import cl from "./Modal.module.scss";
 
@@ -21,7 +21,6 @@ const Modal: FC<ModalProps> = ({ children, isOpen, handleClose }) => {
 
   return (
     <ReactPortal wrapperId="react-portal-modal-container">
-        
       <CSSTransition
         in={isOpen}
         timeout={{ exit: 300 }}

@@ -11,6 +11,10 @@
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  button {
+    background-color: rgba(130, 178, 132, 1);
+    border: none;
+  }
 
   .menuList {
     width: 100%;
@@ -19,12 +23,6 @@
 
     li {
       padding: 2vh 0;
-
-      button{
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
     }
   }
 }

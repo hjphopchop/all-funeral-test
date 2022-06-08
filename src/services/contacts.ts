@@ -25,7 +25,5 @@ export const contactsApi = createApi({
         body: { ...contacts },
       }),
     }),
-
-
   }),
 });

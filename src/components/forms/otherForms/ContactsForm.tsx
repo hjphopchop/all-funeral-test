@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { contactsApi } from "../../../services/contacts";
+import cl from "./OtherForms.module.scss";
 
 const ContactsForm = ({ contacts }: any) => {
   const [updateContacts] = contactsApi.useUpdateContactsMutation();
@@ -21,7 +22,7 @@ const ContactsForm = ({ contacts }: any) => {
     console.log(contact);
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className={cl.form}>
       <label htmlFor="lastname">Название</label>
       <input {...register("lastname", { required: true })} />
       <label htmlFor="firstname">полное название</label>

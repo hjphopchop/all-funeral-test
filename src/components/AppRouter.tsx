@@ -8,27 +8,24 @@ const AppRouter = () => {
   return (
     <Routes>
       {!isAuth &&
-       Children.toArray(privateRoutes?.map((route) => (
-        <>
-          <Route
-            path={route.path}
-            element={<route.element />}
-          />
+        Children.toArray(
+          privateRoutes?.map((route) => (
+            <>
+              <Route path={route.path} element={<route.element />} />
 
-          <Route path="*" element={<Navigate to={route.path} replace />} />
-        </>
-      ))) }
+              <Route path="*" element={<Navigate to={route.path} replace />} />
+            </>
+          ))
+        )}
       {isAuth &&
-      Children.toArray(publicRoutes?.map((route) => 
-      <>
-        <Route
-          path={route.path}
-          element={<route.element />}
-        />
-        <Route path="*" element={<Navigate to={route.path} replace />} />
-      </>
-    ))
-        }
+        Children.toArray(
+          publicRoutes?.map((route) => (
+            <>
+              <Route path={route.path} element={<route.element />} />
+              <Route path="*" element={<Navigate to={route.path} replace />} />
+            </>
+          ))
+        )}
     </Routes>
   );
 };

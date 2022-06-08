@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useAppDispatch } from "../../../hooks/store";
 import { companiesApi } from "../../../services/companies";
 import { addImage } from "../../../store/slices/imagesSlice";
+import cl from "./OtherForms.module.scss";
 
 const PhotoForm = () => {
   const { register, handleSubmit } = useForm();
@@ -10,19 +11,19 @@ const PhotoForm = () => {
 
   const dispatch = useAppDispatch();
 
-
-  const onSubmit = async (data:any) => {
+  const onSubmit = async (data: any) => {
+    console.log(data);
     const formData = new FormData();
     formData.append("file", data.file[0]);
 
-    const res:any = await addPhoto(formData);
-    dispatch(addImage(res?.data?.thumbpath))
-
+    const res: any = await addPhoto(formData);
+    console.log(res);
+    dispatch(addImage(res?.data?.thumbpath));
   };
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} className={cl.form}>
         <input type="file" {...register("file")} />
 
         <input type="submit" />
