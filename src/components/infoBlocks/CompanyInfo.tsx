@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import cl from "./infoBlocks.module.scss";
 import pencil from "../../assets/img/page/Pencil.png";
-import { companiesApi } from "../../services/companies";
-import { useParams } from "react-router-dom";
+
 import Modal from "../modal/Modal";
 import CompanyForm from "../forms/otherForms/CompanyForm";
 
-const CompanyInfo: any = () => {
-  const param = useParams();
-  const { data: company } = companiesApi.useGetCompanyQuery(param.id);
-
-  console.log(company);
+const CompanyInfo: any = ({company}:any) => {
+  
   const [isOpen, setIsopen] = useState(false);
 
   const handleOpen = () => {
@@ -27,14 +23,14 @@ const CompanyInfo: any = () => {
         <div className={cl.InfoTitle}>
           <h3>{company.shortName} </h3>
           <button onClick={handleOpen}>
-            <img src={pencil} />
+            <img src={pencil} alt="pencil" />
           </button>
         </div>
         <div>
           <div className={cl.InfoTitle}>
             <p>Общая информация </p>
             <button onClick={handleOpen}>
-              <img src={pencil} />
+            <img src={pencil} alt="pencil" />
             </button>
           </div>
           <div className={cl.infoContent}>

@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
 import { companiesApi } from "../../../services/companies";
 import { Company } from "../../../types/company";
 import cl from "./OtherForms.module.scss";
@@ -8,7 +9,10 @@ interface CompanyProps{
   company:Company
 }
 const CompanyForm:FC<CompanyProps> = ({ company }) => {
+  const param = useParams();
+  console.log(param)
   const [updateCompany] = companiesApi.useUpdateCompanyMutation();
+  
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -21,9 +25,9 @@ const CompanyForm:FC<CompanyProps> = ({ company }) => {
   });
 
   const onSubmit = (company:any) => {
-
-    updateCompany(company);
-
+    const id = param.id
+    updateCompany({company,id});
+    
     console.log(company);
   };
   return (

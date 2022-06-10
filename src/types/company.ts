@@ -8,6 +8,7 @@ export interface Company {
   shortName: string;
   type: string[];
   updatedAt?: string;
+  photos?: any[]
 }
 
 export interface Contract {

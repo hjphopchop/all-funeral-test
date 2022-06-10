@@ -5,8 +5,8 @@ import { contactsApi } from "../../services/contacts";
 import ContactsForm from "../forms/otherForms/ContactsForm";
 import Modal from "../modal/Modal";
 
-const ContactsInfo = () => {
-  const { data: contacts, error, isLoading } = contactsApi.useGetContactsQuery("");
+const ContactsInfo = ({contact}:any) => {
+  const { data: contacts, error, isLoading } = contactsApi.useGetContactsQuery(contact);
 
   const [isOpen, setIsopen] = useState(false);
 
@@ -29,7 +29,7 @@ const ContactsInfo = () => {
       <div className={cl.InfoTitle}>
         <p>Контактные данные </p>
         <button onClick={handleOpen}>
-          <img src={pencil} />
+          <img src={pencil} alt='pencil' />
         </button>
       </div>
       <div className={cl.infoContent}>
