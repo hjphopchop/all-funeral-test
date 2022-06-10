@@ -21,28 +21,28 @@ const Menu = () => {
       <ul className={cl.menuList}>
         <li>
           <Link to={"/"}>
-            <img src={home}></img>
+            <img src={home} alt="home"></img>
           </Link>
         </li>
         <li>
           <Link to={"/market"}>
-            <img src={market}></img>
+            <img src={market} alt="market"></img>
           </Link>
         </li>
         <li>
-          <img src={search}></img>
+          <img src={search} alt="search"></img>
         </li>
       </ul>
       <ul className={cl.menuList}>
         <li>
-          <img src={settings}></img>
+          <img src={settings} alt="settings"></img>
         </li>
         <li>
-          <img src={chat}></img>
+          <img src={chat} alt="chat"></img>
         </li>
         <li>
           <button onClick={handleLogout}>
-            <img src={exit}></img>
+            <img src={exit} alt="exit"></img>
           </button>
         </li>
       </ul>

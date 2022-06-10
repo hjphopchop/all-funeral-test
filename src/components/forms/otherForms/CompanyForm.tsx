@@ -21,7 +21,6 @@ const CompanyForm:FC<CompanyProps> = ({ company }) => {
   });
 
   const onSubmit = (company:any) => {
-    company.type = company.type.replace(/\s/g, "").split(",");
 
     updateCompany(company);
 

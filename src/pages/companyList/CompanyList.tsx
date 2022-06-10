@@ -1,8 +1,8 @@
 import React, { Children } from "react";
-import Company from "../companyItem/CompanyItem";
+import Company from "../../components/companyItem/CompanyItem";
 import cl from "./CompanyList.module.scss";
 
-const Companies = () => {
+const CompanyList = () => {
   const companies = [
     {
       id: 12,
@@ -24,4 +24,4 @@ const Companies = () => {
   );
 };
 
-export default Companies;
+export default CompanyList;

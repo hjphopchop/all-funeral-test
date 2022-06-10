@@ -37,7 +37,7 @@ export const companiesApi = createApi({
           Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibWF4IiwiaWF0IjoxNjU0MzgxMTI2LCJleHAiOjE2NTQ5ODU5MjZ9.jVqiX-AFwk2tSenmKVGwZd0xbKWXckWf49WGdsni_1Y`,
         },
       }),
-      invalidatesTags: ["Companies"],
+      
     }),
     addPhoto: build.mutation<any, any>({
       query: (img) => ({
